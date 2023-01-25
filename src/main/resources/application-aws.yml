@@ -1,0 +1,7 @@
+app:
+  cache:
+    host: clustercfg.xxxx-redis-01.xxxx.use1.cache.amazonaws.com
+    port: 6379
+    authEnabled: true
+    username: xxxxx
+    password: ${REDIS_PASSWORD}

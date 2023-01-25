@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1/rate-limit
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+spring:
+  application:
+    name: Rate-Limit
+
+logging:
+  level:
+    io.lettuce: debug
+
+app:
+  cache:
+    defaultTimeToLive: 15m
+    configByName:
+      "exchanges":
+        timeToLive: 1200s
+      "countries":
+        timeToLive: 10m
+      # Surround the key with [] if the key has special characters
+      "[country:exist]":
+        timeToLive: 1m

@@ -1,0 +1,4 @@
+app:
+  cache:
+    host: localhost
+    port: 6379
